@@ -1,2 +1,33 @@
-<h1>ジャンル一覧</h1>
+<div class="container">
+  <div class="row">
+
+    <table class="table table-striped">
+
+<tbody>
+
+<h1>ジャンル一覧・追加</h1>
+<tr>
+  <td>
+
+
+　<%= form_with model: @admin do |f| %>
+
+<td>ジャンル名</td>
+<td><%= f.text_field :name %></td>
+
+<td><%=f.submit '新規投稿' %></td>
+　</td>
+</tr>
+
+ <% end %>
+</tbody>
+
+  </table>
+
+</div>
+</div>
+
+
+
+
 

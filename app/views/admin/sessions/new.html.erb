@@ -2,11 +2,11 @@
   <p id="notice"></p>
   <div class="container">
     <div class="row">
-<table class="table table-hover table-inverse">
+      <div class="mx-auto col-11 col-sm-10 col-lg-8 col-x1-6">
 
-  <tbody>
 
 <h2>管理者ログイン</h2>
+
 <tr>
   <td>
 
@@ -14,8 +14,10 @@
 
   <div class="field">
 
-  <tr><%= f.label :メールアドレス %><br /></tr>
+  <%= f.label :メールアドレス %><br />
+
   <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+
   </div>
 
   <div class="field">
@@ -31,9 +33,14 @@
   <% end %>
 
   <div class="actions">
-    <div><%= link_to "ログイン", admin_top_path %></div>
+    <div><%= link_to "ログイン", admin_top_path, class: "btn btn-primary" %></div>
   </div>
 <% end %>
 
 <%= render "admin/shared/links" %>
+
+      </div>
+    </div>
+  </div>
+</main>
 

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+    get "/home/about" => "homes#about", as: "about"
     get 'items/new'
 
   end

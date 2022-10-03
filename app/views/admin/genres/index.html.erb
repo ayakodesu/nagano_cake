@@ -5,9 +5,19 @@
 
 <tbody>
 
-<h1>ジャンル一覧・追加</h1>
-<tr>
+<div class="row">
+      <div class="p-3 mb-2 bg-secondary text-dark">ジャンル一覧・追加</div>
+　　</div>
   <td>
+
+
+
+    <main>
+  <p id="notice"></p>
+  <div class="container px-5 px-sm-0">
+    <div class="row">
+
+    <div class="col-md-5 offset-md-12">
 
 
 　<%= form_with model: @admin do |f| %>
@@ -15,7 +25,7 @@
 <td>ジャンル名</td>
 <td><%= f.text_field :name %></td>
 
-<td><%=f.submit '新規投稿' %></td>
+<td><%=f.submit '新規投稿', class: "btn btn-success" %></td>
 　</td>
 </tr>
 
@@ -27,6 +37,41 @@
 </div>
 </div>
 
+<main>
+  <p id="notice"></p>
+  <div class="container px-5 px-sm-0">
+    <div class="row">
+
+      <div class="col-md-5 offset-md-12">
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ジャンル</th>
+        <th></th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+ <tbody>
+    <% @admins.each do |admin| %>
+      <tr>
+
+      <td><%= admin.name %></td>
+
+    <% end %>
+
+
+
+
+
+
+
+
+
+
+</main>
 
 
 

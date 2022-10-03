@@ -6,6 +6,11 @@
       <div class="col-sm-12 col-md-8 col-ig-5 px-5 px-sm-0 mx-auto">
 
 
+<%= form_with model: @admin do |f| %>
+
+<td>商品名</td>
+<td><%= f.text_field :name %></td>
 
 
-<h1>admin編集画面</h1>
+
+ <% end %>

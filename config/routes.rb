@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get "/home/about" => "homes#about", as: "about"
+    resources :genres, only: [:new, :index, :create, :edit, :update, :destroy]
     get 'items/new'
-
   end
 
   namespace :admin do

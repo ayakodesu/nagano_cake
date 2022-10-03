@@ -8,5 +8,7 @@ class Admin::GenresController < ApplicationController
   end
 
   def edit
+    @admin = Admin.find(params[:id])
   end
+
 end

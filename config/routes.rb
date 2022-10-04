@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get "/home/about" => "homes#about", as: "about"
     resources :genres, only: [:new, :index, :create, :edit, :update, :destroy]
     get 'items/new'
+    get 'items/edit'
   end
 
   namespace :admin do
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
     get 'top' => 'homes#top'
     get 'genres/index'
     get 'genres/edit'
+
   end
 # 顧客用
 # URL /customers/sign_in ...

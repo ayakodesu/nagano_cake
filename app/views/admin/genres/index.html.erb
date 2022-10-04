@@ -1,48 +1,38 @@
 <div class="container">
   <div class="row">
 
-    <table class="table table-striped">
 
-<tbody>
 
 <div class="row">
-      <div class="p-3 mb-2 bg-secondary text-dark">ジャンル一覧・追加</div>
-　　</div>
-  <td>
-
+  <div class="col-md">
+    <div class="p-3 mb-2 bg-secondary text-dark">ジャンル一覧・追加</div>
+  </div>
+</div>
 
 
     <main>
   <p id="notice"></p>
-  <div class="container px-5 px-sm-0">
+  <div class="container">
     <div class="row">
+      <div class="col-md">
 
-    <div class="col-md-5 offset-md-12">
+      <%= form_with model: @genre,url: admin_genres_path do |f| %>
+        <div>ジャンル名</div>
+        <div><%= f.text_field :name %></div>
+        <div><%=f.submit '新規投稿', class: "btn btn-success" %></div>
+      <% end %>
 
 
-　<%= form_with model: @admin do |f| %>
-
-<td>ジャンル名</td>
-<td><%= f.text_field :name %></td>
-
-<td><%=f.submit '新規投稿', class: "btn btn-success" %></td>
-　</td>
-</tr>
-
- <% end %>
-</tbody>
-
-  </table>
-
-</div>
-</div>
+      </div>
+    </div>
+  </div>
+    </main>
 
 <main>
   <p id="notice"></p>
-  <div class="container px-5 px-sm-0">
-    <div class="row">
-
-      <div class="col-md-5 offset-md-12">
+    <div class="container px-5 px-sm-0">
+      <div class="row">
+        <div class="col-md">
 
 
   <table class="table">
@@ -55,19 +45,16 @@
     </thead>
 
  <tbody>
-    <% @admins.each do |admin| %>
+    <% @genres.each do |genre| %>
       <tr>
 
-      <td><%= admin.name %></td>
-
+      <td><%= genre.name %></td>
+      <td><%= link_to "編集する", admin_genres_path(genre.id), class: "btn btn-sm btn-success" %></td>
+      </tr>
     <% end %>
+  </tbody>
 
-
-
-
-
-
-
+  </table>
 
 
 

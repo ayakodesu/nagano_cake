@@ -1,15 +1,73 @@
 
 <main>
   <p id="notice"></p>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col">
+
+
+<%= form_with model: @genre do |f| %>
+
   <div class="container">
     <div class="row">
-      <div class="col-sm-12 col-md-8 col-ig-5 px-5 px-sm-0 mx-auto">
+
+      <div class="col-2">
+        商品名
+      </div>
+
+      <div class="col-2">
+      <%= f.text_field :name %>
+      </div>
 
 
-<%= form_with model: @admin do |f| %>
+  <div class="container">
+    <div class="row">
 
-<td>商品名</td>
-<td><%= f.text_field :name %></td>
+      <div class="col-2">
+        商品説明
+      </div>
+
+      <div class="col-2">
+      <%= f.text_area :introduction %>
+      </div>
+
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-2">
+        ジャンル
+      </div>
+
+      <div class="col-2">
+      <%= f.text_field :name %>
+      </div>
+
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-2">
+        税抜価格
+      </div>
+
+      <div class="col-2">
+      <%= f.text_field :price %>
+      </div>
+
+      <div class="container">
+    <div class="row">
+       <div class="col-6">
+
+
+
+      <div class="form-check">
+  <input class="form-check-input" type="radio" id="radio_1_1" name="radio_1" value="1" checked>
+  <label class="form-check-label" for="radio_1_1">Red</label>
+</div>
+
+
+
 
 
 

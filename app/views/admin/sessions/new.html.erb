@@ -1,39 +1,43 @@
 <main>
   <p id="notice"></p>
   <div class="container">
-
     <div class="row">
-      <div class="p-3 mb-2 bg-secondary text-dark">管理者ログイン</div>
+      <div class="p-3 mb-2 bg-secondary text-light">管理者ログイン</div>
 　　</div>
 
 <div class="btn-wrapper col-6 mx-auto">
     <div class="row">
+      <div class="col-sm">
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-  <tr>
-    <td>
-
-  <div class="field">
-
-  <td><%= f.label :メールアドレス %><br /></td>
-
-  <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
 
 
-
-  </div>
-
-  <div class="field">
-    <td><%= f.label :パスワード %><br /></td>
-    <td><%= f.password_field :password, autocomplete: "current-password" %></td>
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col-md-6">
+  <%= f.label :メールアドレス %><br />
+      </div>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "btn-sm btn-10" %>
   </div>
 
 
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col-md-6">
+    <%= f.label :パスワード %><br />
+      </div>
+    <%= f.password_field :password, autocomplete: "current-password" %>
+  </div>
 
-  <div class="actions">
+
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col-md-6">
     <div><%= link_to "ログイン", admin_top_path, class: "btn btn-primary" %></div>
-  </div>
+      </div>
+
+
 <% end %>
 
 <%= render "admin/shared/links" %>

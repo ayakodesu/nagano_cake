@@ -6,9 +6,9 @@
       <div class="p-3 mb-2 bg-secondary text-light">ジャンル編集</div>
 　　</div>
 
-  <%= form_with model: @genre do |f| %>
+  <%= form_with model: @genre,url: admin_genre_path do |f| %>
 
-<div class="container text-center">
+  <div class="container text-center">
     <div class="row">
 
       <div class="col-2">
@@ -16,14 +16,16 @@
       </div>
 
       <div class="col-2">
-      <%= f.text_field :name %>
+        <%= f.text_field :name %>
       </div>
 
 
-　<div class="col-2">
 
+　    <div class="col-2">
 
-  <div><%= link_to "変更を保存", admin_genres_index_path, class: "btn btn-success" %></div>
+        <div><%= f.submit "変更を保存", class: "btn btn-success" %></div>
+      </div>
+    </div>
   </div>
 
   <% end %>

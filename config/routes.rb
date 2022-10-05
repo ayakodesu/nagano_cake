@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   namespace :admin do
     get 'top' => 'homes#top'
     get 'genres/index'
-    get 'genres/edit'
+    get 'genres/edit/:id' => 'genres#edit'
 
   end
 # 顧客用

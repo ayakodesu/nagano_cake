@@ -6,11 +6,12 @@
 　　</div>
 
 
-<%= form_with model: @item do |f| %>
+  <%= form_with model: @item,url: admin_items_index_path do |f| %>
 
 
   <div class="container">
-    <div class="row">
+    <div class="row justify-content-center">
+
 
       <div class="col-2">
         商品画像
@@ -20,55 +21,59 @@
       <%= f.text_field :introduction %>
       </div>
 
+
+
+
   <div class="container">
-    <div class="row">
+    <div class="row mt-3 justify-content-center">
 
       <div class="col-2">
         商品名
       </div>
 
       <div class="col-2">
-      <%= f.text_field :name %>
+      <%= f.text_field :name, placeholder: "商品名" %>
       </div>
 
 
+
   <div class="container">
-    <div class="row">
+    <div class="row mt-2 justify-content-center">
 
       <div class="col-2">
         商品説明
       </div>
 
       <div class="col-2">
-      <%= f.text_area :introduction %>
+      <%= f.text_area :introduction, placeholder: "ここに説明文を記述します"%>
       </div>
 
 
   <div class="container">
-    <div class="row">
+    <div class="row mt-2 justify-content-center">
 
       <div class="col-2">
         ジャンル
       </div>
 
       <div class="col-2">
-      <%= f.text_field :name %>
+      <%= f.select :name, ['ケーキ', 'クッキー', 'プリン'], {include_blank: '選択ボックス'}, class: 'sample' %>
       </div>
 
 
   <div class="container">
-    <div class="row">
+    <div class="row mt-2 justify-content-center">
 
       <div class="col-2">
         税抜価格
       </div>
 
       <div class="col-2">
-      <%= f.text_field :price %>
+      <%= f.text_field :price, placeholder: "1000"%>
       </div>
 
       <div class="container">
-      <div class="row">
+      <div class="row mt-2 justify-content-center">
 
       <div class="col-2">
         販売ステータス
@@ -89,17 +94,14 @@
   </label>
 </div>
 
- <div class="container">
-      <div class="row">
+  <div class="container">
+      <div class="row mt-2 justify-content-center">
 
       <div class="col">
 
-<div><%= link_to "変更を保存", admin_top_path, class: "btn btn-success" %></div>
+<div><%= f.submit "変更を保存", class: "btn btn-success" %></div>
 
 
 </div>
 
-
-
-
- <% end %>
+<% end %>

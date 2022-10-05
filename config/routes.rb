@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :genres, only: [:new, :index, :create, :edit, :update, :destroy]
     get 'items/new'
     get 'items/edit'
+    get 'items/index'
   end
 
   namespace :admin do

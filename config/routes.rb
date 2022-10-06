@@ -7,7 +7,8 @@ Rails.application.routes.draw do
     get 'genres/index'
     get 'genres/edit/:id' => 'genres#edit'
 
-    resources :items, only: [:new, :index, :create, :edit, :update, :destroy]
+    resources :items, only: [:new, :index, :create, :edit, :show, :update, :destroy]
+    get 'items/index'
     resources :orders, only: [:new, :index, :create, :edit, :update, :destroy]
     resources :customers, only: [:new, :index, :create, :edit, :update, :destroy]
   end

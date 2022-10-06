@@ -6,7 +6,7 @@
 　　</div>
 
 
-  <%= form_with model: @item,url: admin_items_index_path do |f| %>
+  <%= form_with model: @item, url: admin_items_path do |f| %>
 
 
   <div class="container">
@@ -18,7 +18,7 @@
       </div>
 
       <div class="col-2">
-      <%= f.text_field :introduction %>
+      <%= f.file_field :image, accept: "image/*" %>
       </div>
 
 
@@ -57,7 +57,7 @@
       </div>
 
       <div class="col-2">
-      <%= f.select :name, ['ケーキ', 'クッキー', 'プリン'], {include_blank: '選択ボックス'}, class: 'sample' %>
+      <%= f.select :name, ['ケーキ', 'クッキー', 'プリン'], {include_blank: '--選択してください--'}, class: 'sample' %>
       </div>
 
 
@@ -84,15 +84,15 @@
   <label for="formRadioDefault1" class="form-check-label">
     販売中
   </label>
-
-
+  </div>
 
   <div class="form-check">
   <input type="radio" class="form-check-input" name="formRadioDefault" id="formRadioDefault2" checked>
   <label for="formRadioDefault2" class="form-check-label">
     販売停止中
   </label>
-</div>
+  </div>
+
 
   <div class="container">
       <div class="row mt-2 justify-content-center">

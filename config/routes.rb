@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     get "/home/about" => "homes#about", as: "about"
     get 'top' => 'homes#top'
     resources :genres, only: [:new, :index, :create, :edit, :update, :destroy]
-    get 'genres/index'
+    get 'genres/index' 
     get 'genres/edit/:id' => 'genres#edit'
 
     resources :items, only: [:new, :index, :create, :edit, :show, :update, :destroy]

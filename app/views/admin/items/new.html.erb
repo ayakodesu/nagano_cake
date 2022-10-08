@@ -48,7 +48,7 @@
         ジャンル
       </div>
       <div class="col-2">
-      <%= f.select :genre_id, ['ケーキ', 'クッキー', 'プリン','パフェ'], {include_blank: '--選択してください--'}, class: 'sample' %>
+      <%= f.collection_select :genre_id, Genre.all, :id, :name, {include_blank: '--選択してください--'}, class: 'sample' %>
       </div>
 
 

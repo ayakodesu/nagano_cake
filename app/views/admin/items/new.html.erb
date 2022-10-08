@@ -48,7 +48,7 @@
         ジャンル
       </div>
       <div class="col-2">
-      <%= f.select :genre_id, ['ケーキ', 'クッキー', 'プリン'], {include_blank: '--選択してください--'}, class: 'sample' %>
+      <%= f.select :genre_id, ['ケーキ', 'クッキー', 'プリン','パフェ'], {include_blank: '--選択してください--'}, class: 'sample' %>
       </div>
 
 
@@ -66,12 +66,13 @@
       <div class="col-2">
         販売ステータス
       </div>
-    <%= form_with model: @item, local: true do |f| %>
-      <%= f.radio_button :is_active, :true %>
-      <%= f.label :is_active, "販売中" %><br />
-      <%= f.radio_button :is_active, :false %>
-      <%= f.label :cis_active, "販売停止中" %><br />
-    <% end %>
+
+      <div><%= f.radio_button :is_active, :true %></div>
+      <div><%= f.label :is_active, "販売中" %><br /></div>
+
+      <div><%= f.radio_button :is_active, :false %></div>
+      <div><%= f.label :cis_active, "販売停止中" %><br /></div>
+
 
 
     <div class="container">

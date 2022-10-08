@@ -8,18 +8,71 @@
 
 
 　<%= form_with model: @item, url: admin_items_path do |f| %>
-　
-　
-  <div class="container">
+
+
+
+      <div><%= image_tag @item.image %></div>
+
+
+
+
+    <div class="container">
     <div class="row mt-3 justify-content-center">
       <div class="col-2">
         商品名
       </div>
       <div class="col-2">
-      <%= f.text_field :name, placeholder: "商品名" %>
+        <%= @item.name %>
       </div>
-　
-　
+
+      <div class="container">
+    <div class="row mt-2 justify-content-center">
+      <div class="col-2">
+        商品説明
+      </div>
+      <div class="col-2">
+        <%= @item.introduction %>
+      </div>
+
+
+      <div class="container">
+    <div class="row mt-2 justify-content-center">
+      <div class="col-2">
+        ジャンル
+      </div>
+      <div class="col-2">
+        <%= @item.genre_id %>
+      </div>
+
+      <div class="container">
+    <div class="row mt-2 justify-content-center">
+      <div class="col-2">
+        税抜価格
+      </div>
+      <div class="col-2">
+      <%= @item.price %>
+      </div>
+
+       <div class="container">
+      <div class="row mt-2 justify-content-center">
+      <div class="col-2">
+        販売ステータス
+      </div>
+      <div class="col-2">
+      <%= @item.is_active %>
+      </div>
+
+
+      <div class="container">
+      <div class="row mt-2 justify-content-center">
+      <div class="col-2">
+
+      <div><%= f.submit "編集する", class: "btn btn-success" %></div>
+
+      </div>
+      </div>
+      </div>
+
 
 
 

@@ -1,2 +1,55 @@
-<h1>Admin::Customers#show</h1>
-<p>Find me in app/views/admin/customers/show.html.erb</p>
+<p id="notice"></p>
+  <div class="container text-center">
+    <div class="row">
+      <div class="p-3 mb-2 bg-secondary text-light">会員詳細</div>
+　　</div>
+
+　<%= form_with model: @customer, url: admin_customer_path do |f| %>
+
+　 <div class="container">
+    <div class="row mt-3 justify-content-center">
+      <div class="col-2">
+        会員ID
+      </div>
+      <div clsdd="col-2">
+        <%= @customer.id %>
+      </div>
+
+      <div class="container">
+    <div class="row mt-2 justify-content-center">
+      <div class="col-2">
+        メールアドレス
+      </div>
+      <div class="col-2">
+        <%= @customer.email %>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row mt-2 justify-content-center">
+      <div class="col-2">
+        ステータス
+      </div>
+      <div class="col-2">
+        <% if @customer.is_deleted == false %>
+          有効
+        <% else %>
+          退会
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row mt-2 justify-content-center">
+      <div class="col-2">
+      <div><%= link_to "編集する", edit_admin_customer_path(@customer.id), class: "btn btn-sm btn-success" %></div>
+      </div>
+      <div><%= link_to "注文履歴一覧を見る", admin_orders_path(@customer.id), class: "btn btn-sm btn-primary" %></div>
+    </div>
+  </div>
+
+
+  <% end %>
+  <%= paginate @customers %>

@@ -9,14 +9,14 @@
     <div class="row">
       <div class="col-sm">
 
-<%= form_with model: @session, url: admin_session_path do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
 
 
   <div class="container">
     <div class="row mb-3">
       <div class="col-md-6">
-  <%= f.label :メールアドレス %><br />
+  <%= f.label :email %><br />
       </div>
   <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sample@example.com", class: "btn-sm btn-10" %>
   </div>
@@ -25,7 +25,7 @@
   <div class="container">
     <div class="row mb-3">
       <div class="col-md-6">
-    <%= f.label :パスワード %><br />
+    <%= f.label :password %><br />
       </div>
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>

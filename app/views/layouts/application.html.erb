@@ -24,6 +24,47 @@
 
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
+              <% if admin_signed_in? %>
+
+            <%= link_to admin_about_path(admin_user.id), class: 'nav-link text-dark' do %>
+
+            <p class="border rounded">About</p>
+
+            <% end %>
+
+
+            <%= link_to admin_items_path, class: 'nav-link text-dark' do %>
+
+            <p class="border rounded">商品一覧</p>
+
+            <% end %>
+
+
+
+            <%= link_to new_admin_item_path, class: 'nav-link text-dark' do %>
+
+              <p class="border rounded">新規登録</p>
+
+            <% end %>
+
+
+            <%= link_to new_admin_session_path, class: 'nav-link text-dark' do %>
+
+              <p class="border rounded">ログイン</p>
+
+            <% end %>
+
+          <div>
+
+            <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+
+          <% end %>
+
+
+
+
+
 
             <%= link_to admin_about_path, class: 'nav-link text-dark' do %>
 
@@ -54,8 +95,6 @@
             <% end %>
 
           <div>
-
-
 
             <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

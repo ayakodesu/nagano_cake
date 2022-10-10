@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :items, only: [:new, :index, :create, :edit, :show, :update, :destroy]
     get 'items/index'
     get 'lists/:id' => 'lists#show'
-    resources :orders, only: [:new, :index, :create, :edit, :update, :destroy]
+    resources :orders, only: [:show]
     resources :customers, only: [:new, :index, :show, :create, :edit, :update, :destroy]
   end
 

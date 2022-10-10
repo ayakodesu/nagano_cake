@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   namespace :admin do
     get "/home/about" => "homes#about", as: "about"
     get 'top' => 'homes#top'
+
+    resources :homes, only: [:new, :index, :create, :edit, :update, :destroy]
     resources :genres, only: [:new, :index, :create, :edit, :update, :destroy]
     get 'genres/index'
     get 'genres/edit/:id' => 'genres#edit'
@@ -10,8 +12,14 @@ Rails.application.routes.draw do
     resources :items, only: [:new, :index, :create, :edit, :show, :update, :destroy]
     get 'items/index'
     get 'lists/:id' => 'lists#show'
+
     resources :orders, only: [:show]
+
     resources :customers, only: [:new, :index, :show, :create, :edit, :update, :destroy]
+
+
+
+
   end
 
 

@@ -3,6 +3,10 @@ class Public::HomesController < ApplicationController
   end
 
   def top
+    @genres = Genre.all
+  end
+
+  def about
   end
 
 end

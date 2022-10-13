@@ -58,6 +58,8 @@
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             </input>
           </form>
+          
+          
 
 
         <% elsif customer_signed_in? %>
@@ -109,7 +111,9 @@
               <p class="border rounded">ログイン</p>
             <% end %>
 
-
+        <%= link_to destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' do %>
+              <p class="border rounded">ログアウト</p>
+            <% end %>
 
 
           <div>

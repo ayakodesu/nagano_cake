@@ -4,16 +4,16 @@
       <div class="p-3 mb-2 bg-secondary text-light">会員情報編集</div>
 　　</div>
 
-    <tbody>
-　　<% @customers.each do |customer| %>
-　　<tr>
-     <td><%= customer.id %></td>
-    </tr>
-    <% end %>
-    </tbody>
+
 
 
     <%= form_with model: @customer, url: admin_customer_path do |f| %>
+
+    <div class="form-group">
+        会員ID
+        <%= @customer.id %>
+      </div>
+
 
     <div class="form-group">
         氏名
@@ -31,7 +31,7 @@
 
     <div class="form-group">
        郵便番号
-      <%= f.text_field :Postal_cade %>
+      <%= f.text_field :postal_code %>
     </div>
 
 
@@ -48,7 +48,7 @@
 
     <div class="form-group">
         メールアドレス
-      <%= f.text_field :address %>
+      <%= f.text_field :email %>
    </div>
 
     <div class="form-group">

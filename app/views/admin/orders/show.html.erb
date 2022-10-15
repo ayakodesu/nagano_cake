@@ -13,7 +13,7 @@
         購入者
       </div>
       <div class="col-2">
-        <%=  %>
+        <%=  @order,customer_id %>
       </div>
     </div>
   </div>
@@ -89,7 +89,7 @@
       <td></td>
       <td><%= order_deails.price %></td>
       <td><%= order.amount %></td>
-      <td></td>
+      <td><%= order.total_payment %></td>
       <td></td>
 
 

@@ -48,7 +48,7 @@
         支払方法
       </div>
       <div class="col-2">
-        <%= @order.payment_method %>
+        <%= @order.payment_method_i18n %>
       </div>
     </div>
   </div>
@@ -59,7 +59,7 @@
         注文ステータス
       </div>
       <div class="col-2">
-        <%= @order.status %>
+        <%= @order.status_i18n %>
       </div>
     </div>
   </div>
@@ -90,7 +90,7 @@
       <td><%= order_detail.price %></td>
       <td><%= order_detail.amount %></td>
       <td></td>
-      <td></td>
+      <td><%= order_detail.making_method_i18n %></td>
 
 
 

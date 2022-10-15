@@ -13,7 +13,7 @@
         購入者
       </div>
       <div class="col-2">
-        <%=  @order,customer_id %>
+        <%=  @order.customer_id %>
       </div>
     </div>
   </div>
@@ -24,7 +24,7 @@
         注文日
       </div>
       <div class="col-2">
-        <%= %>
+        <%= @order.created_at %>
       </div>
     </div>
   </div>
@@ -84,12 +84,12 @@
     </thead>
 
     <tbody>
-    <% @order_details.each do |order| %>
+    <% @order_details.each do |order_detail| %>
     <tr>
+      <td><%= order_detail.item_id %></td>
+      <td><%= order_detail.price %></td>
+      <td><%= order_detail.amount %></td>
       <td></td>
-      <td><%= order_deails.price %></td>
-      <td><%= order.amount %></td>
-      <td><%= order.total_payment %></td>
       <td></td>
 
 

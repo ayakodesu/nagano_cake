@@ -58,32 +58,28 @@
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             </input>
           </form>
-          
-          
+
+
 
 
         <% elsif customer_signed_in? %>
 
-         <%= link_to admin_items_path, class: 'nav-link text-dark' do %>
+         <%= link_to public_customers_path, class: 'nav-link text-dark' do %>
+              <p class="border rounded">マイページ</p>
+            <% end %>
+
+
+            <%= link_to public_items_path, class: 'nav-link text-dark' do %>
               <p class="border rounded">商品一覧</p>
             <% end %>
 
 
-            <%= link_to admin_customers_path, class: 'nav-link text-dark' do %>
-              <p class="border rounded">会員一覧</p>
+            <%= link_to public_cart_items_path, class: 'nav-link text-dark' do %>
+              <p class="border rounded">カート</p>
             <% end %>
 
 
-            <%= link_to admin_top_path, class: 'nav-link text-dark' do %>
-              <p class="border rounded">注文履歴一覧</p>
-            <% end %>
-
-
-            <%= link_to admin_genres_index_path, class: 'nav-link text-dark' do %>
-              <p class="border rounded">ジャンル一覧</p>
-            <% end %>
-
-            <%= link_to destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' do %>
+            <%= link_to destroy_customer_session_path, method: :delete, class: 'nav-link text-dark' do %>
               <p class="border rounded">ログアウト</p>
             <% end %>
 

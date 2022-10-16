@@ -59,7 +59,7 @@
             </input>
           </form>
 
-          <% elsif %>
+          <% elsif admin_signed_in? %>
 
 
             <%= link_to admin_about_path, class: 'nav-link text-dark' do %>
@@ -88,6 +88,8 @@
 
             <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+
+
 
 
 
@@ -158,6 +160,7 @@
 
 
       <% end %>
+
 
 
 

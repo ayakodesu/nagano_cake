@@ -91,16 +91,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
         <% elsif customer_signed_in? %>
 
          <%= link_to public_customers_path, class: 'nav-link text-dark' do %>
@@ -147,9 +137,6 @@
               <p class="border rounded">ログイン</p>
             <% end %>
 
-             <%= link_to destroy_customer_session_path, method: :delete, class: 'nav-link text-dark' do %>
-              <p class="border rounded">ログアウト</p>
-            <% end %>
 
 
 

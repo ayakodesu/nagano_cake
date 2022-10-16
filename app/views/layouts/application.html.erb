@@ -59,6 +59,43 @@
             </input>
           </form>
 
+          <% elsif %>
+
+
+            <%= link_to admin_about_path, class: 'nav-link text-dark' do %>
+              <p class="border rounded">About</p>
+            <% end %>
+
+
+            <%= link_to admin_items_path, class: 'nav-link text-dark' do %>
+              <p class="border rounded">商品一覧</p>
+            <% end %>
+
+
+            <%= link_to new_admin_item_path, class: 'nav-link text-dark' do %>
+              <p class="border rounded">新規登録</p>
+            <% end %>
+
+
+            <%= link_to new_admin_session_path, class: 'nav-link text-dark' do %>
+              <p class="border rounded">ログイン</p>
+            <% end %>
+
+
+
+
+          <div>
+
+            <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+
+
+
+
+
+
+
+
 
 
 
@@ -85,31 +122,33 @@
 
 
 
-        <% else %>
+
+      <% elsif %>
 
 
-            <%= link_to admin_about_path, class: 'nav-link text-dark' do %>
+            <%= link_to public_about_path, class: 'nav-link text-dark' do %>
               <p class="border rounded">About</p>
             <% end %>
 
 
-            <%= link_to admin_items_path, class: 'nav-link text-dark' do %>
+            <%= link_to public_items_path, class: 'nav-link text-dark' do %>
               <p class="border rounded">商品一覧</p>
             <% end %>
 
 
-            <%= link_to new_admin_item_path, class: 'nav-link text-dark' do %>
+            <%= link_to new_customer_registration_path, class: 'nav-link text-dark' do %>
               <p class="border rounded">新規登録</p>
             <% end %>
 
 
-            <%= link_to new_admin_session_path, class: 'nav-link text-dark' do %>
+            <%= link_to new_customer_session_path, class: 'nav-link text-dark' do %>
               <p class="border rounded">ログイン</p>
             <% end %>
 
-        <%= link_to destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' do %>
+             <%= link_to destroy_customer_session_path, method: :delete, class: 'nav-link text-dark' do %>
               <p class="border rounded">ログアウト</p>
             <% end %>
+
 
 
           <div>
@@ -119,6 +158,11 @@
 
 
       <% end %>
+
+
+
+
+
 
 
 

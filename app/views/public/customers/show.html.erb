@@ -6,18 +6,18 @@
 　</div>
 
 　<div class="container">
-    <div class="row">
+    <div class="row ">
       <div class="col-1">
         <strong>登録情報</strong>
       </div>
-      <div class="col-2">
+        <div class="col">
         <%= link_to "編集する", edit_public_customers_path(@customer), class: "btn btn-sm btn-success" %>
       </div>
     </div>
   </div>
 
 <div class="container">
-    <div class="row text-left">
+    <div class="row mt-4 text-left">
 
   <%= form_with model: @customer, url: edit_public_customers_path do |f| %>
 
@@ -74,13 +74,8 @@
 
 
 
-
-
-
-
-
 <div class="container">
-    <div class="row">
+    <div class="row mt-4">
       <div class="col-1">
         <strong>配送先</strong>
       </div>
@@ -91,7 +86,7 @@
   </div>
 
   <div class="container">
-    <div class="row">
+    <div class="row mt-4">
       <div class="col-1">
         <strong>注文履歴</strong>
       </div>

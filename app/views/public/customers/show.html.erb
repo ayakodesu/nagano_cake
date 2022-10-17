@@ -4,5 +4,100 @@
       <div class="p-3 mb-2 bg-secondary text-light">マイページ</div>
 　　</div>
 　</div>
-　
-　
+
+　<div class="container">
+    <div class="row">
+      <div class="col-1">
+        <strong>登録情報</strong>
+      </div>
+      <div class="col-2">
+        <%= link_to "編集する", edit_public_customers_path(@customer), class: "btn btn-sm btn-success" %>
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+    <div class="row text-left">
+
+  <%= form_with model: @customer, url: edit_public_customers_path do |f| %>
+
+
+<table border="1" style="border-collapse: collapse">
+
+  <tr>
+    <th bgcolor = "lavender">氏名</th>
+    <td>
+      <%= @customer.last_name %>
+      <%= @customer.first_name %>
+    </td>
+  </tr>
+
+
+  <tr>
+    <th bgcolor = "lightsteelblue">カナ</th>
+      <td>
+        <%= @customer.last_name_kana %>
+        <%= @customer.first_name_kana %>
+      </td>
+  </tr>
+
+
+ <tr>
+    <th bgcolor = "lavender">郵便番号</th>
+    <td><%= @customer.postal_code %></td>
+  </tr>
+
+
+  <tr>
+    <th bgcolor = "lightsteelblue">住所</th>
+    <td><%= @customer.address %></td>
+  </tr>
+
+
+  <tr>
+    <th bgcolor = "lavender">電話番号</th>
+    <td><%= @customer.telephone_number %></td>
+  </tr>
+
+
+  <tr>
+    <th bgcolor = "lightsteelblue">メールアドレス</th
+    ><td><%= @customer.email %></td>
+  </tr>
+
+
+</table>
+
+<% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="container">
+    <div class="row">
+      <div class="col-1">
+        <strong>配送先</strong>
+      </div>
+      <div class="col-2">
+        <%= link_to "一覧を見る", public_addresses_path(@customer), class: "btn btn-sm btn-primary" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-1">
+        <strong>注文履歴</strong>
+      </div>
+      <div class="col-2">
+        <%= link_to "一覧を見る", public_order_path(@customer), class: "btn btn-sm btn-primary" %>
+      </div>
+    </div>
+  </div>
+

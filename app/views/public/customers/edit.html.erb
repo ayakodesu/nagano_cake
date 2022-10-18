@@ -45,7 +45,16 @@
    </div>
 
 
-<div><%= f.submit "編集内容を保存", class: "btn btn-success" %></div>
 
+<div class="container">
+    <div class="row">
+      <div class="col-2">
+        <div><%= f.submit "編集内容を保存", class: "btn btn-success" %></div>
+      </div>
+        <div class="col-2">
+          <div><%= link_to "退会する", public_confirm_unsubscribe_path(@customer), class: "btn btn-sm btn-danger" %></div>
+        </div>
+    </div>
+</div>
 
 <% end %>

@@ -16,6 +16,13 @@ class Public::CustomersController < ApplicationController
   end
 
   def unsubscribe
+    @customer = Customer.find(name: params[:name])
+  end
+
+  def withdraw
+    @customer = Customer.find(name: params[:name])
+    @customer.update(is_valid: false)
+
   end
 
 

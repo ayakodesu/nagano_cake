@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     resources :items, only: [:index, :create, :show, :update, :destroy]
     resources :cart_items, only: [:index, :create, :update, :destroy]
     resource :customer, only: [:create, :edit, :show, :unsubscribe, :update, :destroy]
+    get 'unsubscribe/:name' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
+    patch ':id/withdraw/:name' => 'customers#withdraw', as: 'withdraw_user'
+    put 'withdraw/:name' => 'customer#withdraw'
 
     resources :addresses, only: [:create, :edit, :index, :update, :destroy]
 

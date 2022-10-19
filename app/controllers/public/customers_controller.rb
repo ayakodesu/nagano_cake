@@ -23,6 +23,8 @@ class Public::CustomersController < ApplicationController
     @customer = current_customer
     @customer.update(is_valid: false)
 
+
+
   end
 
 

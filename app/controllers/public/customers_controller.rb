@@ -22,7 +22,7 @@ class Public::CustomersController < ApplicationController
   def withdraw
     @customer = current_customer
     @customer.update(is_valid: false)
-
+    redirect_to public_path
 
 
   end

@@ -13,15 +13,13 @@
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="text-center"
-      <div><%= link_to "退会しない", public_path, class: "btn btn-sm btn-primary" %></div>
-      </div>
-      </div>
+    <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <%= link_to "退会しない", public_path, class: "btn btn-sm btn-primary" %>
+            <%= link_to "退会する", public_withdraw_user_path(@customer), method: :patch, class: "btn btn-sm btn-danger" %>
+          </div>
+        </div>
+    </div>
 
-     <div class="col">
-        <div class="text-center"
-      <div><%= link_to "退会する", public_withdraw_user_path(@customer), method: :patch, class: "btn btn-sm btn-primary" %></div>
-      </div>
+

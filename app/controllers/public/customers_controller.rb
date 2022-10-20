@@ -21,7 +21,7 @@ class Public::CustomersController < ApplicationController
 
   def withdraw
     @customer = current_customer
-    @customer.update(is_valid: false)
+    @customer.update(is_deleted: true)
     redirect_to public_path
 
 

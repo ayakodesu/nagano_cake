@@ -46,20 +46,20 @@
   <% end %>
 
 
-  <div class="container">
-    <div class="row mt-4 text-left">
-
-
-
- <table border="1" style="border-collapse: collapse">
+<div class="container">
+  <div class="row mt-4 text-left">
+    <table border="1" style="border-collapse: collapse">
     <thead>
       <tr>
-    <th>郵便番号</th>
-    <th>住所</th>
-    <th>宛名</th>
-     <th colspan="3"></th>
-  </tr>
-</thead>
+        <th>郵便番号</th>
+        <th>住所</th>
+        <th>宛名</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    </table>
+  </div>
+</div>
 
 
 
@@ -73,10 +73,7 @@
                 <td><%= link_to "編集する", edit_public_address_path(address.id), class: "btn btn-sm btn-success" %></td>
                   <td><%= link_to "削除する", public_addresses_path(@address), class: "btn btn-sm btn-danger" %></td>
       </tr>
+      <% end %>
     </tbody>
 
 
-
-
-
-  <% end %>

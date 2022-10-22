@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     patch ':id/withdraw/:name' => 'customers#withdraw', as: 'withdraw_user'
     put 'withdraw/:name' => 'customer#withdraw'
 
-    resources :addresses, only: [:create, :edit, :index, :update, :destroy]
+    resources :addresses, only: [:new, :create, :edit, :index, :update, :destroy]
 
 
   end

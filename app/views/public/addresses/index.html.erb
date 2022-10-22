@@ -33,8 +33,11 @@
         宛名
       </div>
       <div class="col-3">
-      <%= f.text_field :last_name, placeholder: "山田花子" %>
-      <%= f.text_field :first_name, placeholder: "山田花子" %>
+      <%= f.text_field :name %>
+
+      <%= f.hidden_field :customer_id, :value => current_customer.id %>
+
+
       </div>
       <div class="col-3">
       <%= f.submit "新規登録", class: "btn btn-success" %>
@@ -68,8 +71,7 @@
       <tr>
         <td><%= address.postal_code %></td>
           <td><%= address.address %></td>
-            <td><%= address.last_name %>
-              <%= address.first_name %></td>
+            <td><%= address.name %></td>
                 <td><%= link_to "編集する", edit_public_address_path(address.id), class: "btn btn-sm btn-success" %></td>
                   <td><%= link_to "削除する", public_addresses_path(@address), class: "btn btn-sm btn-danger" %></td>
       </tr>

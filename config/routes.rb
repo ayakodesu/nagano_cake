@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     put 'withdraw/:name' => 'customer#withdraw'
 
     resources :addresses, only: [:new, :create, :edit, :index, :update, :destroy]
-
+    delete 'addresses/:id' =>'addresses#destroy', as: 'destroy_address'
 
   end
 

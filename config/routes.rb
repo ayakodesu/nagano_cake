@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   namespace :public do
     get '/' => 'homes#top'
     get "/home/about" => "homes#about", as: "about"
-    resources :orders, only: [:new, :index, :create, :edit, :update, :destroy, :complete, :show]
+    resources :orders, only: [:new, :index, :create, :edit, :update, :destroy, :complete, :show, :confirm]
+    post '/public/confirm'
     resources :items, only: [:index, :create, :show, :update, :destroy]
     resources :cart_items, only: [:index, :create, :update, :destroy]
     resource :customer, only: [:create, :edit, :show, :unsubscribe, :update, :destroy]

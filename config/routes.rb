@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:new, :index, :create, :edit, :update, :destroy, :complete, :show, :confirm]
     post '/public/confirm'
     resources :items, only: [:index, :create, :show, :update, :destroy]
+
     resources :cart_items, only: [:index, :create, :update, :destroy]
     resource :customer, only: [:create, :edit, :show, :unsubscribe, :update, :destroy]
     get 'unsubscribe/:name' => 'customers#unsubscribe', as: 'confirm_unsubscribe'

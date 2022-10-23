@@ -18,7 +18,12 @@
     <h3>新着商品</h3>
 
 <div class="row">
+
     <% @items.each do |item| %>
+
+    <% if item.is_active %>
+
+
             <div class="col">
                 <%= link_to (image_tag item.image, size: '200x200'), public_item_path(item.id) %>
 
@@ -30,9 +35,11 @@
                 <strong>価格</strong>
                 <%= item.price %>
 
+
             </div>
             </div>
             </div>
+    <% end %>
 
 
 
@@ -41,4 +48,4 @@
 </div>
 
 
-
+<div class="all-items-show-button"><%= link_to "全ての商品をみる", public_items_path %></div>

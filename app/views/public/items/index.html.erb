@@ -1,15 +1,5 @@
 
-<tbody>
-    <% @genres.each do |genre| %>
-    <tr>
-      <% if genre.is_active == true %>
-      <td>
-        <%= link_to genre.name, products_path(genre_id: genre.id), class: "text-secondary" %>
-      </td>                    <%# products_pathに引数としてcategory_idを渡す %>
-      <% end %>
-    </tr>
-    <% end %>
-</tbody>
+
 
 <h3>商品一覧</h3>
 

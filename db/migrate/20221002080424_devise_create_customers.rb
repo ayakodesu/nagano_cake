@@ -22,6 +22,7 @@ class DeviseCreateCustomers < ActiveRecord::Migration[6.1]
       t.string :telephone_number, null: false
       t.boolean :is_deleted, null: false, default: false
 
+
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
       # t.datetime :current_sign_in_at

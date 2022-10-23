@@ -9,6 +9,7 @@ class CreateItems < ActiveRecord::Migration[6.1]
       t.boolean :is_active, null: false, default: true
 
 
+
       t.timestamps
     end
   end

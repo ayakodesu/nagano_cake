@@ -20,7 +20,7 @@
 <div class="row">
     <% @items.each do |item| %>
             <div class="col">
-                <%= link_to (image_tag item.image), public_items_path %>
+                <%= link_to (image_tag item.image, size: '200x200'), public_items_path %>
 
             <div class="col">
                 <strong>商品名</strong>

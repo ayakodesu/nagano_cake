@@ -1,6 +1,4 @@
 
-
-
 <div class="container">
     <div class="row">
         <div class="col-xs-12 mx-auto">
@@ -16,19 +14,31 @@
     </div>
 </div>
 
-
 <div class="container">
     <h3>新着商品</h3>
+
 <div class="row">
-<% @items.each do |item| %>
+    <% @items.each do |item| %>
+            <div class="col">
+                <%= link_to (image_tag item.image), public_items_path %>
 
-<td><%= image_tag item.image %></td>
-<td><%= item.name %></td>
-<td><%= item.price %></td>
+            <div class="col">
+                <strong>商品名</strong>
+                <%= item.name %>
+
+            <div class="col">
+                <strong>商品名</strong>
+                <%= item.price %>
+
+            </div>
+            </div>
+            </div>
 
 
-<% end %>
+
+    <% end %>
+    </div>
 </div>
-</div>
+
 
 

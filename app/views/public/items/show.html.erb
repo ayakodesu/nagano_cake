@@ -1,5 +1,5 @@
 
-<%= form_with model: @item, url: public_cart_items_path do |f| %>
+<%= form_with model: @cart_item, url: public_cart_items_path do |f| %>
 
 <div class="container justify-content-center ">
     <div class="row">
@@ -25,9 +25,9 @@
 
 
 
-  <div><%= f.select :item_id, [['1個', 1], ['2個', 2], ['3個', 3], ['4個', 4]], { include_blank: true, selected: 1 }, { id: "item_id", class: "item_class" } %></div>
+  <div><%= f.select :amount, *[1..10] %></div>
 
-
+<%= f.hidden_field :item_id, :value => @item.id %>
 
 
 <div><%= f.submit "カートに入れる", class: "btn btn-success" %></div>

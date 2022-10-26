@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get "/home/about" => "homes#about", as: "about"
     resources :orders, only: [:new, :index, :create, :edit, :update, :destroy, :complete, :show, :confirm]
     post '/public/confirm'
+
     resources :items, only: [:index, :create, :show, :update, :destroy]
 
     resources :cart_items, only: [:index, :create, :update, :destroy, :destroy_all]

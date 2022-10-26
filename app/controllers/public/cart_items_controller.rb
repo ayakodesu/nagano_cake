@@ -20,11 +20,19 @@ class Public::CartItemsController < ApplicationController
 
   end
 
+  def destroy_all
+      @cart_item = CartItem.find(params[:id])
+      @cart_item.destroy_all
+      redirect_to destroy_all_public_cart_items_path
+　end
+
 
 
 
 private
   def cart_item_params
     params.require(:cart_item).permit(:item_id, :customer_id, :amount)
+  end
+
   end
 end

@@ -7,9 +7,16 @@ Rails.application.routes.draw do
     post '/public/confirm'
     resources :items, only: [:index, :create, :show, :update, :destroy]
 
-    resources :cart_items, only: [:index, :create, :update, :destroy]
+    resources :cart_items, only: [:index, :create, :update, :destroy, :destroy_all]
     patch ':id/cart_item/:name' => 'customers#cart_item', as: 'cart_item_user'
     delete 'cart_items/:id' =>'cart_items#destroy', as: 'destroy_cart_item'
+
+    resources :cart_items do
+      collection do
+        delete :destroy_all
+
+      end
+    end
 
     resource :customer, only: [:create, :edit, :show, :unsubscribe, :update, :destroy]
     get 'unsubscribe/:name' => 'customers#unsubscribe', as: 'confirm_unsubscribe'

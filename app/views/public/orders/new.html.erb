@@ -2,30 +2,73 @@
   <div class="container">
     <div class="row">
       <div class="p-3 mb-2 bg-secondary text-light">注文情報入力</div>
-　　</div>
-　</div>
+    </div>
+  </div>
 
 
-　<%= form_with model: @item, url: public_public_confirm_path do |f| %>
+  <%= form_with model: @item, url: public_public_confirm_path do |f| %>
 
-　<div class="container">
+  <div class="container">
       <div class="row mb-2">
       <div class="col-2">
-　     支払方法
-　</div>
-　<div><%= f.radio_button :payment_method, :credit_card, checked: "checked" %></div>
+       <h5>支払方法</h5>
+  </div>
+  <div class="container">
+      <div class="row mb-2">
+  <div><%= f.radio_button :payment_method, :credit_card, checked: "checked" %></div>
   <div><%= f.label :クレジットカード, class: "payment_method_label" %><br /></div>
+  </div>
+  </div>
 
+<div class="container">
+      <div class="row mb-2">
   <div><%= f.radio_button :payment_method, :bank_transfer, checked: "checked" %></div>
   <div><%= f.label :銀行振込, class: "payment_method_label" %><br /></div>
+</div>
+</div>
 
 
   <div class="container">
       <div class="row mb-2">
       <div class="col-2">
-        お届け先
+        <h5>お届け先</h5>
       </div>
 
+  <div class="container">
+      <div class="row mb-2">
+  <div><%= f.radio_button :payment_method, :credit_card, checked: "checked" %></div>
+  <div><%= f.label :ご自身の住所, class: "payment_method_label" %><br /></div>
+ >
+
+<div class="container">
+      <div class="row mb-2">
+  <div><%= f.radio_button :payment_method, :credit_card, checked: "checked" %></div>
+  <div><%= f.label :登録済住所から選択, class: "payment_method_label" %><br /></div>
+
+
+  <div class="container">
+      <div class="row mb-2">
+  <div><%= f.radio_button :payment_method, :credit_card, checked: "checked" %></div>
+<div><%= f.label :新しいお届け先, class: "payment_method_label" %><br /></div>
+ <div class="container">
+      <div class="row mb-2">
+  <%= f.label :郵便番号 %>
+      <%= f.text_field :postal_code %>
+      </div>
+      </div>
+
+      <div class="container">
+      <div class="row mb-2">
+        <%= f.label :住所 %>
+      <%= f.text_field :address %>
+      </div>
+      </div>
+
+      <div class="container">
+      <div class="row mb-2">
+        <%= f.label :宛名 %>
+      <%= f.text_field :name %>
+      </div>
 
 
 
@@ -33,9 +76,10 @@
       <div class="row mt-2 justify-content-center">
       <div class="col">
 
+
 <div><%= f.submit "確認画面へ進む", class: "btn btn-success" %></div>
 </div>
 </div>
 </div>
 
-　<% end %>
+  <% end %>

@@ -25,8 +25,13 @@
       <% @cart_items.each do |cart_item| %>
         <td><%= cart_item.item.name %></td>
         <td><%= cart_item.item.with_tax_price %>円</td>
-        <td><%= cart_item.amount %>
-        <%= link_to "変更", public_cart_item_path(cart_item.id), class: "btn btn-outline-success btn-sm" %></td>
+
+        <%= form_with model: @cart_item, url: public_cart_items_path do |f| %>
+        <td><%= f.select :amount, *[1..10] %>
+        <%= f.submit "変更", class: "btn btn-success" %></td>
+        <% end %>
+
+
         <td><%= cart_item.subtotal %>円</td>
         <td><%= link_to "削除", public_destroy_cart_item_path(cart_item.id), method: :delete, class: "btn btn-outline-danger btn-sm" %></td>
 

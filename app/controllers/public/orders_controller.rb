@@ -1,6 +1,14 @@
 class Public::OrdersController < ApplicationController
   def new
     @order = Order.new
+    @customer = current_customer
+    @addresses = current_customer.addresses
+  end
+
+  def create
+    @order = Order.new(order_params)
+    @order.save
+    redirect_to 
   end
 
   def complete
@@ -10,6 +18,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def show
+
   end
 
    private

@@ -6,7 +6,7 @@
   </div>
 
 
-  <%= form_with model: @item, url: public_public_confirm_path do |f| %>
+  <%= form_with model: @item, url: public_confirm_path do |f| %>
 
   <div class="container">
       <div class="row mb-2">
@@ -34,8 +34,8 @@
 <% end %>
 
 
-<%= form_with model: @customer, url: public_public_confirm_path do |f| %>
-<%= form_with model: @address, url: public_public_confirm_path do |f| %>
+<%= form_with model: @customer, url: public_confirm_path(current_customer.id) do |f| %>
+<%= form_with model: @address, url: public_confirm_path do |f| %>
 
 
   <div class="container">
@@ -49,8 +49,8 @@
 
   <div class="container">
       <div class="row mb-2">
-  <div><%= f.radio_button :address, :credit_card, checked: "checked" %></div>
-  <%= f.label :address, "ご自身の住所" %><br /></div>
+  <div><%= f.radio_button :select_address, :address %></div>
+  <%= f.label :select_address, "ご自身の住所" %><br /></div>
   </div>
 
 
@@ -71,8 +71,8 @@
 
  <div class="container">
       <div class="row mb-2">
-  <div><%= f.radio_button :address, :credit_card %></div>
-  <%= f.label :address, "登録済住所から選択" %><br /></div>
+  <div><%= f.radio_button :select_address, :address %></div>
+  <%= f.label :select_address, "登録済住所から選択" %><br /></div>
   </div>
 
   <div class="container">
@@ -85,8 +85,8 @@
 
   <div class="container">
       <div class="row mb-2">
-  <div><%= f.radio_button :address, :credit_card %></div>
-  <%= f.label :address, "新しいお届け先" %><br /></div>
+  <div><%= f.radio_button :select_address, :address %></div>
+  <%= f.label :select_address, "新しいお届け先" %><br /></div>
   </div>
 
 
@@ -121,6 +121,9 @@
         </div>
         <div class="col-2">
       <%= f.text_field :name %>
+
+
+
       </div>
       </div>
       </div>

@@ -27,7 +27,7 @@
 
     <tbody>
     <tr>
-      <% if current_customer.cart_items.present? %>
+
       <% @cart_items.each do |cart_item| %>
         <td><%= cart_item.item.name %></td>
         <td><%= cart_item.item.with_tax_price %>円</td>
@@ -46,7 +46,7 @@
     </tr>
 
     <% end %>
-    <% end %>
+
   </tbody>
 
   </table>

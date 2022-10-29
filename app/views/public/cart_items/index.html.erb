@@ -17,11 +17,17 @@
       </tr>
     </thead>
 
+<div class="container text-center">
+    <div class="row">
 
   <div><%= link_to "カートを空にする", public_destroy_all_cart_items_path, method: :delete, class: "btn btn-danger btn-sm" %></div>
+  </div>
+</div>
+
 
     <tbody>
     <tr>
+      <% if current_customer.cart_items.present? %>
       <% @cart_items.each do |cart_item| %>
         <td><%= cart_item.item.name %></td>
         <td><%= cart_item.item.with_tax_price %>円</td>
@@ -39,6 +45,7 @@
       <% @total += cart_item.subtotal %>
     </tr>
 
+    <% end %>
     <% end %>
   </tbody>
 

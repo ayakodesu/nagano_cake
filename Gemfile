@@ -63,7 +63,7 @@ gem 'net-smtp'
 
 gem 'enum_help'
 
-gem 'rails-i18n'
+
 
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"

@@ -29,6 +29,7 @@
         <%= form_with model: @cart_item, url: public_cart_items_path do |f| %>
         <td><%= f.select :amount, *[1..10] %>
         <%= f.submit "変更", class: "btn btn-success" %></td>
+
         <% end %>
 
 
@@ -42,7 +43,14 @@
   </tbody>
 
   </table>
-<p>合計金額（税込）<%= @total %>円</p>
+
+   <div class="container text-center">
+    <div class="row">
+
+<p table class="table-bordered">合計金額（税込）<%= @total %>円</p>
+
+</div>
+</div>
 
 <div class="text-left">
   <td><%= link_to "買い物を続ける", public_path, class: "btn btn-primary btn-sm" %></td>

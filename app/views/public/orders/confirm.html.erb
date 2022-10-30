@@ -5,7 +5,8 @@
     </div>
   </div>
 
-
+<div class="container">
+    <div class="row">
   <table border="1" style="border-collapse: collapse">
     <thead>
       <tr>
@@ -18,7 +19,7 @@
       </tr>
     </thead>
 
-    <tbody>
+<tbody>
     <tr>
 
       <% @cart_items.each do |cart_item| %>
@@ -27,11 +28,30 @@
         <td>
         <%= form_with model: cart_item, url: public_cart_item_path(cart_item.id), method: :patch do |f| %>
         <%= f.select :amount, *[1..10] %>
-        </td>
+        <%= f.submit "変更", class: "btn btn-success" %>
         <% end %>
+        </td>
 
-      <% end %>
+
+        <td><%= cart_item.subtotal %>円</td>
+        <td><%= link_to "削除", public_destroy_cart_item_path(cart_item.id), method: :delete, class: "btn btn-outline-danger btn-sm" %></td>
+
+      <% @total += cart_item.subtotal %>
     </tr>
-    </tbody>
+
+    <% end %>
+
+  </tbody>
 
   </table>
+
+  </div>
+  </div>
+
+
+<h4>支払方法</h4>
+
+
+
+
+<h4>お届け先</h4>

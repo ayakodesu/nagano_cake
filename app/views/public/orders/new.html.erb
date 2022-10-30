@@ -6,7 +6,7 @@
   </div>
 
 
-  <%= form_with model: @item, url: public_confirm_path do |f| %>
+  <%= form_with model: @order, url: public_orders_confirm_path do |f| %>
 
   <div class="container">
       <div class="row mb-2">
@@ -31,11 +31,7 @@
 </div>
 </div>
 
-<% end %>
 
-
-<%= form_with model: @customer, url: public_confirm_path(current_customer.id) do |f| %>
-<%= form_with model: @address, url: public_confirm_path do |f| %>
 
 
   <div class="container">
@@ -141,6 +137,6 @@
 </div>
 
 
-<% end %>
+
 <% end %>
 

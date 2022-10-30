@@ -8,7 +8,7 @@ class Public::OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.save
-    redirect_to 
+    redirect_to
   end
 
   def complete
@@ -18,7 +18,11 @@ class Public::OrdersController < ApplicationController
   end
 
   def show
+  end
 
+  def confirm
+
+    @cart_items = current_customer.cart_items
   end
 
    private

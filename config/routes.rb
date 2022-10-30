@@ -3,17 +3,15 @@ Rails.application.routes.draw do
   namespace :public do
     get '/' => 'homes#top'
     get "/home/about" => "homes#about", as: "about"
-    resources :orders, only: [:new, :index, :create, :edit, :update, :destroy, :show]
+    resources :orders, only: [:new, :index, :create, :edit, :destroy, :show]
     patch ':id/orders/:name' => 'customers#order', as: 'order_user'
-    post '/confirm' => "orders#confirm"
-
+    post 'orders/confirm' => 'orders#confirm'
 
 
     resources :items, only: [:index, :create, :show, :update, :destroy]
     delete '/cart_items/destroy_all' => 'cart_items#destroy_all', as: 'destroy_all_cart_items'
     resources :cart_items, only: [:index, :create, :update, :destroy]
     patch ':id/cart_item/:name' => 'customers#cart_item', as: 'cart_item_user'
-
     delete 'cart_items/:id' =>'cart_items#destroy', as: 'destroy_cart_item'
 
 

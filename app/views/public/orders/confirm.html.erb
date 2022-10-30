@@ -27,7 +27,11 @@
         <td>
         <%= form_with model: cart_item, url: public_cart_item_path(cart_item.id), method: :patch do |f| %>
         <%= f.select :amount, *[1..10] %>
-
-        <% end %>
         </td>
+        <% end %>
+
       <% end %>
+    </tr>
+    </tbody>
+
+  </table>

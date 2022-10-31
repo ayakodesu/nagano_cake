@@ -65,7 +65,9 @@
       </div>
   <div class="container">
     <div class="row mb-2">
-      <%= f.select :address_id, options_from_collection_for_select(Address.all, :id, :address_display) %>
+      <%= f.select :address_id, options_from_collection_for_select(@addresses, :id, :address_display) %>
+      <%#= f.hidden_field :address_id, :value => 1 %>
+
     </div>
   </div>
 
@@ -111,7 +113,7 @@
         </div>
       </div>
 
-<%= f.hidden_field :address_id, :value => @address %>
+
 
  <div class="container">
     <div class="row mb-3">

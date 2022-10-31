@@ -9,14 +9,14 @@ class Public::OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.save
-    redirect_to
+    redirect_to public_orders_path
   end
 
   def complete
   end
 
   def index
-    @orders = Order.all
+    @orders = current_customer.orders
   end
 
   def show

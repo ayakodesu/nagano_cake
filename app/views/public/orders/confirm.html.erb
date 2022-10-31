@@ -7,7 +7,7 @@
 
 <div class="container">
     <div class="row">
-      <div class="col">
+
       <table border="1" style="border-collapse: collapse">
         <thead>
           <tr>
@@ -33,24 +33,24 @@
 
 
 <%= form_with model: @order, url: public_orders_complete_path do |f| %>
-   <div class="col">
+
     <table border="1" style="border-collapse: collapse">
       <tr>
-        <th bgcolor = "lightsteelblue">送料</th>
+        <th bgcolor = "lavender">送料</th>
         <td><%= @order.shipping_cost %></td>
       </tr>
       <tr>
-        <th bgcolor = "lightsteelblue">商品合計</th>
+        <th bgcolor = "lavender">商品合計</th>
         <td></td>
       </tr>
       <tr>
-        <th bgcolor = "lightsteelblue">請求金額</th>
+        <th bgcolor = "lavender">請求金額</th>
       <td><%= @order.total_payment %></td>
       </tr>
-    </div>
+
     </table>
     </div>
-</div>
+
 
 
 <div class="container">
@@ -67,6 +67,7 @@
         <%= @order.name %>
     </div>
 </div>
+<%= f.hidden_field :order_id, :value => @order.id %>
 
 <div class="container">
     <div class="row">

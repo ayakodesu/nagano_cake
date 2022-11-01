@@ -24,8 +24,11 @@
          <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.created_at %></td>
-        <td><%= order.adderss %></td>
+        <td><%= order.created_at.strftime('%Y年%m月%d日') %></td>
+        <td>〒<%= order.postal_code %><br>
+				      <%= order.address %><br>
+				      <%= order.name %> 様</td>
+
         <td><%= order.item.name %></td>
         <td><%= order.item.price %>円</td>
         <td></td>

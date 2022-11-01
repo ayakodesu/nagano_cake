@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     patch ':id/orders/:name' => 'customers#order', as: 'order_user'
     post 'orders/confirm' => 'orders#confirm'
     get 'orders/complete' => 'orders#complete'
+    post 'orders/complete' => 'orders#complete'
+
 
 
     resources :items, only: [:index, :create, :show, :update, :destroy]

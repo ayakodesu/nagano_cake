@@ -17,6 +17,7 @@ class Public::OrdersController < ApplicationController
 
   def index
     @orders = current_customer.orders
+
   end
 
   def show
@@ -25,6 +26,7 @@ class Public::OrdersController < ApplicationController
   def confirm
     @cart_items = current_customer.cart_items
     @order = Order.new(order_params)
+    @order.shipping_cost = 800
     @select_address = params[:order][:select_address]
     if @select_address == "0"
       @order.postal_code = current_customer.postal_code

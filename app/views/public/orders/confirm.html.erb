@@ -7,7 +7,7 @@
 
 <div class="container">
     <div class="row">
-
+         <div class="col-6">
       <table border="1" style="border-collapse: collapse">
         <thead>
           <tr>
@@ -31,11 +31,14 @@
       </tr>
 <% end %>
   </tbody>
+  </table>
   </div>
 
 
 
 
+
+  <div class="col-6">
     <table border="1" style="border-collapse: collapse">
       <tr>
         <th bgcolor = "lavender">送料</th>
@@ -54,17 +57,20 @@
 
     </table>
     </div>
+    </div>
+    </div>
+
 
 
 
 <div class="container">
-    <div class="row">
+    <div class="row mt-5">
       <h4>支払方法</h4>
       <%= @order.payment_method_i18n %>
     </div>
   </div>
 <div class="container">
-    <div class="row">
+    <div class="row mt-5">
       <h4>お届け先</h4>
       〒<%= @order.postal_code %>
         <%= @order.address %><br />
@@ -74,7 +80,8 @@
 
 
 <div class="container">
-    <div class="row">
+    <div class="row mt-5 text_center">
+
       <%= form_with model: @order, url: public_orders_complete_path do |f| %>
 
         <%= f.hidden_field :postal_code, :value => @order.postal_code %>
@@ -85,6 +92,7 @@
 
 
       <%= f.submit "注文を確定する", class: "btn btn-success" %>
+
     </div>
 </div>
 

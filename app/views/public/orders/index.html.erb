@@ -27,11 +27,10 @@
         <td><%= order.created_at.strftime('%Y年%m月%d日') %></td>
         <td>〒<%= order.postal_code %><br>
 				      <%= order.address %><br>
-				      <%= order.name %> 様</td>
-
+				      <%= order.last_name %><%= order.first_name %> 様</td>
         <td><%= order.item.name %></td>
         <td><%= order.item.price %>円</td>
-        <td></td>
+        <td><%= order.status_i18n %></td>
         <td><%= link_to "表示する", public_order_path(@order.id), class: "btn btn-danger btn-sm" %></div>
       </tr>
     <% end %>

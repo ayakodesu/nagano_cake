@@ -16,12 +16,14 @@ class Public::OrdersController < ApplicationController
   end
 
   def index
-    @orders = current_customer.orders
+
+		@orders = current_customer.orders
 
 
   end
 
   def show
+    @cart_items = current_customer.cart_items
   end
 
   def confirm

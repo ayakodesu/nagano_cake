@@ -8,51 +8,64 @@
 　<%= form_with model: @customer, url: public_customer_path do |f| %>
 
 
-      <div class="form-group">
-        氏名
-        <%= f.text_field :last_name, placeholder: "姓" %>
-      <%= f.text_field :first_name, placeholder: "名" %>
-      </div>
-
-      <div class="form-group">
-        フリガナ
-      <%= f.text_field :last_name_kana, placeholder: "姓カナ" %>
-      <%= f.text_field :first_name_kana, placeholder: "名カナ" %>
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col-2">氏名</div>
+      <div class="col-3"><%= f.text_field :last_name, placeholder: "姓" %></div>
+      <div class="col-3"><%= f.text_field :first_name, placeholder: "名" %></div>
     </div>
+  </div>
 
-
-    <div class="form-group">
-       郵便番号
-      <%= f.text_field :postal_code %>
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col-2">フリガナ</div>
+      <div class="col-3">
+        <%= f.text_field :last_name_kana, placeholder: "姓カナ" %></div>
+        <div class="col-3"><%= f.text_field :first_name_kana, placeholder: "名カナ" %></div>
     </div>
+  </div>
 
 
-    <div class="form-group">
-        住所
-      <%= f.text_field :address %>
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col-2">郵便番号</div>
+        <div class="col-3"><%= f.text_field :postal_code %></div>
     </div>
+  </div>
 
 
-      <div class="form-group">
-        電話番号
-      <%= f.text_field :telephone_number %>
-   </div>
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col-2">住所</div>
+        <div class="col-3"><%= f.text_field :address %></div>
+    </div>
+  </div>
 
 
-    <div class="form-group">
-        メールアドレス
-      <%= f.text_field :email %>
-   </div>
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col-2">電話番号</div>
+        <div class="col-3"><%= f.text_field :telephone_number %></div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col-2">メールアドレス</div>
+        <div class="col-3"><%= f.text_field :email %></div>
+     </div>
+  </div>
 
 
 
-<div class="container">
-    <div class="row">
-      <div class="col-2">
-        <div><%= f.submit "編集内容を保存", class: "btn btn-success" %></div>
+<div class="container text-center">
+    <div class="row mt-5">
+      <div class="col-6">
+        <%= f.submit "編集内容を保存", class: "btn btn-success" %>
       </div>
         <div class="col-2">
-          <div><%= link_to "退会する", public_confirm_unsubscribe_path(@customer), class: "btn btn-sm btn-danger" %></div>
+          <%= link_to "退会する", public_confirm_unsubscribe_path(@customer), class: "btn btn-sm btn-danger" %>
         </div>
     </div>
 </div>

@@ -15,7 +15,7 @@ class Public::OrdersController < ApplicationController
       order_detail.item_id = cart_item.item.id
       order_detail.price = @order.total_payment
       order_detail.amount = cart_item.amount
-      order_detail.save!
+      order_detail.save
     end
     current_customer.cart_items.destroy_all
     redirect_to public_orders_path
@@ -27,7 +27,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def index
-		@orders = current_customer.orders
+		@orders = current_customer.orders.page(params[:page])
 
   end
 

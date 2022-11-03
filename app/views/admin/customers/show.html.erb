@@ -1,27 +1,32 @@
+<%= form_with model: @customer, url: admin_customer_path do |f| %>
+
 <p id="notice"></p>
   <div class="container text-center">
     <div class="row">
-      <div class="p-3 mb-2 bg-secondary text-light">会員詳細</div>
+      <div class="p-3 mb-2 bg-secondary text-light">
+        <%= @customer.last_name %>
+        <%= @customer.first_name %>さん
+        会員詳細</div>
 
 
     </div>
 
 
 
-  <%= form_with model: @customer, url: admin_customer_path do |f| %>
+
 
   <div class="container text-center">
-    <div class="row mt-3 justify-content-center">
+    <div class="row mt-3">
       <div class="col-2">
         会員ID
       </div>
-      <div clsdd="col-2">
+      <div class="col-2">
         <%= @customer.id %>
       </div>
     </div>
 
 
-    <div class="row mt-3 justify-content-center">
+    <div class="row mt-3">
       <div class="col-2">
         氏名
       </div>
@@ -33,7 +38,7 @@
 
 
 
-    <div class="row mt-3 justify-content-center">
+    <div class="row mt-3">
       <div class="col-2">
         フリガナ
       </div>
@@ -45,7 +50,7 @@
 
 
 
-    <div class="row mt-3 justify-content-center">
+    <div class="row mt-3">
       <div class="col-2">
         郵便番号
       </div>
@@ -57,7 +62,7 @@
 
 
 
-    <div class="row mt-3 justify-content-center">
+    <div class="row mt-3">
       <div class="col-2">
         住所
       </div>
@@ -69,7 +74,7 @@
 
 
 
-    <div class="row mt-3 justify-content-center">
+    <div class="row mt-3">
       <div class="col-2">
         電話番号
       </div>
@@ -81,7 +86,7 @@
 
 
 
-    <div class="row mt-2 justify-content-center">
+    <div class="row mt-2">
       <div class="col-2">
         メールアドレス
       </div>
@@ -92,7 +97,7 @@
 
 
 
-    <div class="row mt-2 justify-content-center">
+    <div class="row mt-2">
       <div class="col-2">
         会員ステータス
       </div>
@@ -107,7 +112,7 @@
 
 
 
-    <div class="row mt-2 justify-content-center">
+    <div class="row mt-2">
       <div class="col-2">
       <div><%= link_to "編集する", edit_admin_customer_path(@customer.id), class: "btn btn-sm btn-success" %></div>
       </div>

@@ -2,61 +2,61 @@
   <div class="container">
     <div class="row">
       <div class="p-3 mb-2 bg-secondary text-light">会員情報編集</div>
-　　</div>
-　</div>
+    </div>
+  </div>
 
-　<%= form_with model: @customer, url: public_customer_path do |f| %>
+  <%= form_with model: @customer, url: public_customer_path do |f| %>
 
 
   <div class="container">
+    
     <div class="row mb-3">
       <div class="col-2">氏名</div>
       <div class="col-3"><%= f.text_field :last_name, placeholder: "姓" %></div>
       <div class="col-3"><%= f.text_field :first_name, placeholder: "名" %></div>
     </div>
-  </div>
 
-  <div class="container">
+
+
     <div class="row mb-3">
       <div class="col-2">フリガナ</div>
-      <div class="col-3">
-        <%= f.text_field :last_name_kana, placeholder: "姓カナ" %></div>
-        <div class="col-3"><%= f.text_field :first_name_kana, placeholder: "名カナ" %></div>
+      <div class="col-3"><%= f.text_field :last_name_kana, placeholder: "姓カナ" %></div>
+      <div class="col-3"><%= f.text_field :first_name_kana, placeholder: "名カナ" %></div>
     </div>
-  </div>
 
 
-  <div class="container">
+
+
     <div class="row mb-3">
       <div class="col-2">郵便番号</div>
-        <div class="col-3"><%= f.text_field :postal_code %></div>
+      <div class="col-3"><%= f.text_field :postal_code %></div>
     </div>
-  </div>
 
 
-  <div class="container">
+
+
     <div class="row mb-3">
       <div class="col-2">住所</div>
-        <div class="col-3"><%= f.text_field :address %></div>
+      <div class="col-3"><%= f.text_field :address %></div>
     </div>
-  </div>
 
 
-  <div class="container">
+
+
     <div class="row mb-3">
       <div class="col-2">電話番号</div>
-        <div class="col-3"><%= f.text_field :telephone_number %></div>
+      <div class="col-3"><%= f.text_field :telephone_number %></div>
     </div>
-  </div>
 
 
-  <div class="container">
+
     <div class="row mb-3">
       <div class="col-2">メールアドレス</div>
         <div class="col-3"><%= f.text_field :email %></div>
      </div>
-  </div>
 
+
+</div>
 
 
 <div class="container text-center">

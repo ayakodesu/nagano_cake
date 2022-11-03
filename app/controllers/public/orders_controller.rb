@@ -8,7 +8,8 @@ class Public::OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    @order.save
+    @order.save!
+
     redirect_to public_orders_path
   end
 
@@ -17,8 +18,6 @@ class Public::OrdersController < ApplicationController
 
   def index
 		@orders = current_customer.orders
-
-
   end
 
   def show

@@ -9,16 +9,16 @@ class Public::OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.save
-
-    current_customer.cart_items.each do |cart_item|
-      order_deitali = OrderDetail.new
-      order_deitali.order_id = @order.id
-      order_deitali.item_id = cart_item.item_id
-      order_deitali.price = cart_item.price
-      order_deitali.amount = cart_item.amount
+      cart_items = current_customer.cart_items
+      cart_items.each do |cart_item|
+      order_detail = OrderDetail.new
+      order_detail.order_id = @order.id
+      order_detail.item_id = cart_item.item.id
+      order_detail.total_payment = @order.total_payment
+      order_detail.amount = cart_item.amount
       order_detail.save
     end
-    @cart_items.destroy_all
+    cart_items.destroy_all
     redirect_to public_orders_path
 
   end
@@ -33,7 +33,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def show
-    @cart_items = current_customer.cart_items
+    @orders = current_customer.orders
     @order = Order.find(params[:id])
     @order_details = @order.order_details
     @order.shipping_cost = 800

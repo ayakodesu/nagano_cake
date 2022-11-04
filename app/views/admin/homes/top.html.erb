@@ -3,11 +3,11 @@
   <div class="container">
     <div class="row">
       <div class="p-3 mb-2 bg-secondary text-light">注文履歴一覧</div>
-　　</div>
+    </div>
 
 
-　　<table class="table">
-    <thead>
+  <table class="table">
+  <thead>
       <tr>
         <th>購入日時</th>
         <th>購入者</th>
@@ -22,7 +22,7 @@
  <tbody>
     <% @orders.each do |order| %>
     <tr>
-      <td><%= link_to order.created_at.strftime('%Y年%m月%d日%H:%M:%S'), admin_order_path(order.id) %></td>
+      <td><%= link_to order.created_at.strftime('%Y年%m月%d %H:%M:%S'), admin_order_path(order.id) %></td>
       <td><%= order.customer.full_name %></td>
       <td></td>
       <td><%= order.status_i18n %></td>

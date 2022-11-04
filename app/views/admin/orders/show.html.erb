@@ -8,7 +8,7 @@
   <%= form_with model: @order, url: admin_order_path do |f| %>
 
   <div class="container">
-    <div class="row mt-3 justify-content-center">
+    <div class="row mt-3 mt-5">
       <div class="col-2">
         購入者
       </div>
@@ -19,7 +19,7 @@
   </div>
 
   <div class="container">
-    <div class="row mt-3 justify-content-center">
+    <div class="row mt-3">
       <div class="col-2">
         注文日
       </div>
@@ -30,12 +30,12 @@
   </div>
 
   <div class="container">
-    <div class="row mt-3 justify-content-center">
+    <div class="row mt-">
       <div class="col-2">
         配送先
       </div>
       <div class="col-2">
-        <%= @order.postal_cade %>
+        〒<%= @order.postal_code %>
         <%= @order.address %>
         <%= @order.name %>
       </div>
@@ -43,7 +43,7 @@
   </div>
 
   <div class="container">
-    <div class="row mt-3 justify-content-center">
+    <div class="row mt-3">
       <div class="col-2">
         支払方法
       </div>
@@ -54,7 +54,7 @@
   </div>
 
   <div class="container">
-    <div class="row mt-3 justify-content-center">
+    <div class="row mt-3 mb-5">
       <div class="col-2">
         注文ステータス
       </div>
@@ -71,7 +71,7 @@
 
 
 
-　  <table class="table">
+  <table class="table">
     <thead>
       <tr>
         <th>商品名</th>
@@ -91,16 +91,13 @@
       <td><%= order_detail.amount %></td>
       <td></td>
       <td><%= order_detail.making_method_i18n %></td>
-
-
-
-
     </tr>
-<% end %>
-
+    <% end %>
     </tbody>
 
+  </table>
+</div>
 
 
-
+<%= paginate @order_details %>
 

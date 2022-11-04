@@ -72,8 +72,9 @@
   <% end %>
 
 
-
-
+<div class="container">
+    <div class="row mt-3 mb-5">
+      <div class="col">
   <table class="table">
     <thead>
       <tr>
@@ -106,9 +107,26 @@
 
     <% end %>
     </tbody>
+
 </table>
+</div>
 
 </div>
+</div>
+<%= form_with model: @orderl, url: edit_public_customer_path do |f| %>
+<div class="col text-right">
+<strong>商品合計</strong>
+<br />
+<strong>送料</strong><br />
+<strong>請求合計金額</strong>
+¥<%= @order.total_payment %>
+
+</div>
+<% end %>
+
+
+
+
 
 
 <%= paginate @order_details %>

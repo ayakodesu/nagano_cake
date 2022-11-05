@@ -113,13 +113,14 @@
 
 </div>
 </div>
-<%= form_with model: @orderl, url: edit_public_customer_path do |f| %>
+<%= form_with model: @order, url: edit_public_customer_path do |f| %>
 <div class="col text-right">
 <strong>商品合計</strong>
-<br />
-<strong>送料</strong><br />
+¥<%= @order.total_payment %><br />
+<strong>送料</strong>
+¥<%= @order.shipping_cost %><br />
 <strong>請求合計金額</strong>
-¥<%= @order.total_payment %>
+¥<%= @order.total_payment + @order.shipping_cost %>
 
 </div>
 <% end %>

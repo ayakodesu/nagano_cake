@@ -4,6 +4,7 @@
 
     <div class="row">
       <% @items.each do |item| %>
+     
 
       <% if item.is_active %>
             <div class="col">
@@ -27,4 +28,4 @@
     </div>
 </div>
 
-
+ <%= paginate @genres %>

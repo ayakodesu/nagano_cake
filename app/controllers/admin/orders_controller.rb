@@ -2,7 +2,7 @@ class Admin::OrdersController < ApplicationController
   def show
 
     @order = Order.find(params[:id])
-    @order_details = OrderDetail.all.page(params[:page])
+    @order_details = OrderDetail.page(params[:page])
 
 
   end

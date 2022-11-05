@@ -52,9 +52,11 @@
   <div class="container">
     <div class="row mt-2">
       <div class="col-3">
-        税抜価格
+        税込価格<br />
+        (税抜き)
       </div>
       <div class="col-4">
+
         <%= @item.price %>
       </div>
     </div>
@@ -68,9 +70,9 @@
       </div>
       <div class="col-4">
         <% if @item.is_active == true %>
-          販売中
+          <p class="text-success">販売中</p>
         <% else %>
-          販売停止中
+          <p class="text-secondary">販売停止中</p>
         <% end %>
       </div>
     </div>

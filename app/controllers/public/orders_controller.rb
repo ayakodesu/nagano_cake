@@ -18,7 +18,7 @@ class Public::OrdersController < ApplicationController
       order_detail.save
     end
     current_customer.cart_items.destroy_all
-    redirect_to public_orders_path
+    redirect_to public_orders_complete_path
 
   end
 
@@ -46,12 +46,14 @@ class Public::OrdersController < ApplicationController
       @order.postal_code = current_customer.postal_code
       @order.address = current_customer.address
       @order.name = current_customer.last_name + current_customer.first_name
+
     elsif @select_address == "1"
       @address_id = params[:order][:address_id]
       @address = Address.find(@address_id)
       @order.postal_code = @address.postal_code
       @order.address = @address.address
       @order.name = @address.name
+
     else
 
     end

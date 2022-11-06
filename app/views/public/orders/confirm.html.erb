@@ -24,9 +24,9 @@
     <% @cart_items.each do |cart_item| %>
       <tr>
         <td><%= cart_item.item.name %></td>
-        <td><%= cart_item.item.with_tax_price %>円</td>
+        <td>¥<%= cart_item.item.with_tax_price %></td>
         <td><%= cart_item.amount %></td>
-        <td><%= cart_item.subtotal %>円</td>
+        <td>¥<%= cart_item.subtotal %></td>
         <% total += cart_item.subtotal %>
       </tr>
 <% end %>
@@ -42,17 +42,17 @@
     <table border="1" style="border-collapse: collapse">
       <tr>
         <th bgcolor = "lavender">送料</th>
-        <td><%= @order.shipping_cost %>円</td>
+        <td>¥<%= @order.shipping_cost %></td>
       </tr>
 
       <tr>
         <th bgcolor = "lavender">商品合計</th>
-          <td><%= total %>円</td>
+          <td>¥<%= total %></td>
       </tr>
 
       <tr>
         <th bgcolor = "lavender">請求金額</th>
-      <td><%= @order.shipping_cost + total %>円</td>
+      <td>¥<%= @order.shipping_cost + total %></td>
       </tr>
 
     </table>
@@ -65,24 +65,31 @@
 
 <div class="container">
     <div class="row mt-5">
+      <div class="col-2">
       <h4>支払方法</h4>
+      </div>
+      <div class="col-3">
       <%= @order.payment_method_i18n %>
     </div>
   </div>
-<div class="container">
+
+
     <div class="row mt-5">
+      <div class="col-2">
       <h4>お届け先</h4>
+      </div>
+      <div class="col-2">
       〒<%= @order.postal_code %>
         <%= @order.address %><br />
         <%= @order.name %>
     </div>
 </div>
-
+</div>
 
 <div class="container">
     <div class="row mt-5 text_center">
 
-      <%= form_with model: @order, url: public_orders_path do |f| %>
+      <%= form_with model: @order, url: public_orders_path, method: :post do |f| %>
 
         <%= f.hidden_field :postal_code, :value => @order.postal_code %>
         <%= f.hidden_field :address, :value => @order.address %>
@@ -91,10 +98,6 @@
         <%= f.hidden_field :shipping_cost, :value => 800 %>
         <%= f.hidden_field :total_payment, :value => total %>
         <%= f.hidden_field :customer_id, :value => current_customer.id %>
-
-
-
-
 
 
       <%= f.submit "注文を確定する", class: "btn btn-success" %>

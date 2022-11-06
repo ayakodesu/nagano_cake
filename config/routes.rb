@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   namespace :public do
     get '/' => 'homes#top'
     get "/home/about" => "homes#about", as: "about"
-    resources :orders, only: [:new, :index, :create, :edit, :destroy, :show]
     patch ':id/orders/:name' => 'customers#order', as: 'order_user'
     post 'orders/confirm' => 'orders#confirm'
     get 'orders/complete' => 'orders#complete'
     post 'orders/complete' => 'orders#complete'
+    resources :orders, only: [:new, :index, :create, :edit, :destroy, :show]
 
 
 

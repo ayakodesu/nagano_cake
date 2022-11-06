@@ -49,7 +49,7 @@
     </div>
   </div>
 
-<% @items.each do |item| %>
+
 
 
   <div class="container">
@@ -59,13 +59,15 @@
         (税抜き)
       </div>
       <div class="col-4">
-        <%= item.with_tax_price %><br />
-        <%= @item.price %>
+
+        ¥<%= @item.with_tax_price %><br />
+
+        (¥<%= @item.price %>)
       </div>
     </div>
   </div>
 
-  <% end %>
+
 
 
 

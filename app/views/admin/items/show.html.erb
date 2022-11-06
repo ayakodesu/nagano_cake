@@ -49,6 +49,9 @@
     </div>
   </div>
 
+<% @items.each do |item| %>
+
+
   <div class="container">
     <div class="row mt-2">
       <div class="col-3">
@@ -56,11 +59,14 @@
         (税抜き)
       </div>
       <div class="col-4">
-
+        <%= item.with_tax_price %><br />
         <%= @item.price %>
       </div>
     </div>
   </div>
+
+  <% end %>
+
 
 
   <div class="container">

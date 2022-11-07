@@ -3,6 +3,7 @@
     <div class="row">
       <div class="p-3 mb-2 bg-secondary text-light">注文履歴詳細</div>
     </div>
+  </div>
 
 
 
@@ -109,26 +110,21 @@
     <% end %>
     </tbody>
 
-</table>
+  </table>
+    </div>
+  </div>
 </div>
 
-</div>
-</div>
 <%= form_with model: @order, url: edit_public_customer_path do |f| %>
-<div class="col text-right">
-<strong>商品合計</strong>
-¥<%= @order.total_payment %><br />
-<strong>送料</strong>
-¥<%= @order.shipping_cost %><br />
-<strong>請求合計金額</strong>
-¥<%= @order.total_payment + @order.shipping_cost %>
-
-</div>
+  <div class="col text-right">
+    <strong>商品合計</strong>
+      ¥<%= @order.total_payment %><br />
+    <strong>送料</strong>
+      ¥<%= @order.shipping_cost %><br />
+    <strong>請求合計金額</strong>
+      ¥<%= @order.total_payment + @order.shipping_cost %>
+  </div>
 <% end %>
-
-
-
-
 
 
 <%= paginate @order_details %>

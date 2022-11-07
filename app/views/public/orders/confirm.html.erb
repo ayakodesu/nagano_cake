@@ -30,13 +30,11 @@
         <td>¥<%= cart_item.subtotal %></td>
         <% total += cart_item.subtotal %>
       </tr>
-<% end %>
+    <% end %>
+
   </tbody>
-  </table>
+      </table>
   </div>
-
-
-
 
 
   <div class="col-6">
@@ -57,6 +55,7 @@
       </tr>
 
     </table>
+
     </div>
     </div>
     </div>
@@ -64,15 +63,15 @@
 
 
 
-<div class="container">
+  <div class="container">
     <div class="row mt-5">
       <div class="col-2">
       <h4>支払方法</h4>
       </div>
       <div class="col-3">
       <%= @order.payment_method_i18n %>
+      </div>
     </div>
-  </div>
 
 
     <div class="row mt-5">
@@ -83,11 +82,11 @@
       〒<%= @order.postal_code %>
         <%= @order.address %><br />
         <%= @order.name %>
+      </div>
     </div>
-</div>
-</div>
+  </div>
 
-<div class="container">
+  <div class="container">
     <div class="row mt-5 text_center">
 
       <%= form_with model: @order, url: public_orders_path, method: :post do |f| %>
@@ -104,6 +103,6 @@
       <%= f.submit "注文を確定する", class: "btn btn-success" %>
 
     </div>
-</div>
+  </div>
 
 <% end %>

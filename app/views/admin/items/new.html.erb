@@ -9,7 +9,6 @@
   <%= form_with model: @item, url: admin_items_path do |f| %>
 
 
-  <div class="container">
     <div class="row justify-content-center">
       <div class="col-2">
         商品画像
@@ -17,22 +16,19 @@
       <div class="col-2">
         <%= f.file_field :image, accept: "image/*" %>
       </div>
+    </div>
 
 
-
-
-  <div class="container">
     <div class="row mt-3 justify-content-center">
       <div class="col-2">
         商品名
       </div>
       <div class="col-2">
-      <%= f.text_field :name, placeholder: "商品名" %>
+        <%= f.text_field :name, placeholder: "商品名" %>
       </div>
+    </div>
 
 
-
-  <div class="container">
     <div class="row mt-2 justify-content-center">
       <div class="col-2">
         商品説明
@@ -40,50 +36,47 @@
       <div class="col-2">
         <%= f.text_area :introduction, placeholder: "ここに説明文を記述します"%>
       </div>
+    </div>
 
 
-  <div class="container">
     <div class="row mt-2 justify-content-center">
       <div class="col-2">
         ジャンル
       </div>
       <div class="col-2">
-      <%= f.collection_select :genre_id, Genre.all, :id, :name, {include_blank: '--選択してください--'}, class: 'sample' %>
+        <%= f.collection_select :genre_id, Genre.all, :id, :name, {include_blank: '--選択してください--'}, class: 'sample' %>
       </div>
+    </div>
 
 
-  <div class="container">
+
     <div class="row mt-2 justify-content-center">
       <div class="col-2">
         税抜価格
       </div>
       <div class="col-2">
-      <%= f.text_field :price, placeholder: "1000"%>
+        <%= f.text_field :price, placeholder: "1000"%>
       </div>
+    </div>
 
-      <div class="container">
+
       <div class="row mt-2 justify-content-center">
-      <div class="col-2">
-        販売ステータス
+        <div class="col-2">
+          販売ステータス
+        </div>
+        <div><%= f.radio_button :is_active, :true %></div>
+        <div><%= f.label :is_active, "販売中" %><br /></div>
+
+        <div><%= f.radio_button :is_active, :false %></div>
+        <div><%= f.label :is_active, "販売停止中" %><br /></div>
       </div>
 
-      <div><%= f.radio_button :is_active, :true %></div>
-      <div><%= f.label :is_active, "販売中" %><br /></div>
 
-      <div><%= f.radio_button :is_active, :false %></div>
-      <div><%= f.label :is_active, "販売停止中" %><br /></div>
-
-
-
-    <div class="container">
       <div class="row mt-2 justify-content-center">
       <div class="col">
-
-      <div><%= f.submit "新規登録", class: "btn btn-success" %></div>
-
-
+        <div><%= f.submit "新規登録", class: "btn btn-success" %></div>
       </div>
       </div>
     </div>
 
-<% end %>
+  <% end %>
